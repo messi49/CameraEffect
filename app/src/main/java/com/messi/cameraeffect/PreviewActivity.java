@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import jp.co.cyberagent.android.gpuimage.*;
 
 public class PreviewActivity extends Activity implements View.OnClickListener{
 
@@ -19,6 +20,9 @@ public class PreviewActivity extends Activity implements View.OnClickListener{
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
         //imageView.setImageResource(R.drawable.ic_launcher);
         imageView.setImageURI(Uri.parse("file:///storage/emulated/0/image/handmade_flowers.jpg"));
+
+
+
     }
 
     @Override
@@ -29,6 +33,11 @@ public class PreviewActivity extends Activity implements View.OnClickListener{
 
         Button select_button = (Button)findViewById(R.id.select_button);
         select_button.setOnClickListener(this);
+
+
+        // GPUImage で写真加工
+        GPUImage gpuImage = new GPUImage(this);
+
     }
 
 
